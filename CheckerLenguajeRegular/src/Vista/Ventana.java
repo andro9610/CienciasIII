@@ -39,6 +39,7 @@ public class Ventana {
         /**añadido de elementos al Panel*/
         panel.add(crearTexto("Ingrese el alfabeto, separado por comas"));
         panel.add(crearInput());
+        panel.add(crearTexto("Ingrese la expresion regular"));
         panel.add(crearBoton("Comprobar"));
         return panel;
     }
