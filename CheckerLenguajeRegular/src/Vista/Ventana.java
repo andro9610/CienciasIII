@@ -1,5 +1,6 @@
 package Vista;
         
+import java.awt.Color;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -32,15 +33,25 @@ public class Ventana {
         ventana.setVisible(true);
     }
     
+    
+    public JTextField alfabeto,expresionRegular,cadena;
     /**añadirElementos: Añade JButtons JLabels y textFields a La ventan
      * @return panel*/
     private JPanel añadirElementos(){
         JPanel panel = new JPanel();
         /**añadido de elementos al Panel*/
         panel.add(crearTexto("Ingrese el alfabeto, separado por comas"));
-        panel.add(crearInput());
+        alfabeto = crearInput();
+        panel.add(alfabeto);
         panel.add(crearTexto("Ingrese la expresion regular"));
+        expresionRegular = crearInput();
+        panel.add(crearInput());
+        panel.add(crearTexto("Ingrese la cadena"));
+        cadena = crearInput();
+        panel.add(cadena);
         panel.add(crearBoton("Comprobar"));
+        /**Personalizacion del panel*/
+        panel.setBackground(new Color(207, 209, 208));
         return panel;
     }
     
@@ -50,6 +61,7 @@ public class Ventana {
      */
     private JButton crearBoton(String textoBoton){
         JButton boton = new JButton(textoBoton);
+        boton.setBackground(new Color(0, 151, 123));
         return boton;
     }
     
