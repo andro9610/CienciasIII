@@ -26,19 +26,24 @@ public class Ejecutar {
     }
     
     /**Metodos que permiten pasar datos de la Capa Vista a la capa logica*/
-    public JTextField retornarAlfabeto(){
-        return Vista.Ventana.alfabeto;
+    public String retornarAlfabeto(){
+        return Vista.Ventana.alfabeto.getText();
     }
     
-    public JTextField retornarExpresionRegular(){
-        return Vista.Ventana.expresionRegular;
+    public String retornarExpresionRegular(){
+        return Vista.Ventana.expresionRegular.getText();
     }
     
-    public JTextField retornarCadena(){
-        return Vista.Ventana.cadena;
+    public String retornarCadena(){
+        return Vista.Ventana.cadena.getText();
     }
     
-    /**Metodos que permiten pasar informacion de la capa logica a la capa vista*/
+    /**Metodos que permiten pasar informacion de la capa logica a la capa vista
+     * mostrarMensaje: envia una ventana emergente que le avisa al usuario sobre
+     * diferentes situaciones del programa
+     * 
+     * @param : String tipoMensaje, String mensaje
+    */
     public void mostrarMensaje(String tipoMensaje, String mensaje){
         VentanaEmergente aviso = new VentanaEmergente();
         switch(tipoMensaje){
