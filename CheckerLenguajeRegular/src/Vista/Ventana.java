@@ -37,7 +37,7 @@ public class Ventana {
     }
     
     /**añadido de campos de texto, para que sus valores sean accesibles desde cualquier parte*/
-    public JTextField alfabeto,expresionRegular,cadena;
+    public static JTextField alfabeto,expresionRegular,cadena;
     /**añadirElementos: Añade JButtons JLabels y textFields a La ventan
      * @return panel*/
     private JPanel añadirElementos(){

@@ -4,7 +4,7 @@ import javax.swing.JOptionPane;
 
 public class VentanaEmergente {
     
-    public void mostrarMensaje(String mensaje){
+    public void mostrarInformacion(String mensaje){
         JOptionPane.showMessageDialog(null, mensaje);
     }
     
