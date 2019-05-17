@@ -26,16 +26,9 @@ public class Ejecutar {
     }
     
     /**Metodos que permiten pasar datos de la Capa Vista a la capa logica*/
-    public String retornarAlfabeto(){
-        return Vista.Ventana.alfabeto.getText();
-    }
-    
-    public String retornarExpresionRegular(){
-        return Vista.Ventana.expresionRegular.getText();
-    }
-    
-    public String retornarCadena(){
-        return Vista.Ventana.cadena.getText();
+    public static void ejecutarAlgoritmo(String alfabeto, String expresionRegular, String cadena){
+        /**Codigo que llama a la funcionalidad logica del programa aqui*/
+        mostrarMensaje("error","Aun no existe la logica de la aplicacion");
     }
     
     /**Metodos que permiten pasar informacion de la capa logica a la capa vista
@@ -44,7 +37,7 @@ public class Ejecutar {
      * 
      * @param : String tipoMensaje, String mensaje
     */
-    public void mostrarMensaje(String tipoMensaje, String mensaje){
+    public static void mostrarMensaje(String tipoMensaje, String mensaje){
         VentanaEmergente aviso = new VentanaEmergente();
         switch(tipoMensaje){
             case "informacion":

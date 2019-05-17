@@ -14,6 +14,8 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 
+import Controlador.Ejecutar;
+
 public class Ventana {
     /**crearVentana: Crea una ventana*/
     public void crearVentana(){
@@ -71,8 +73,8 @@ public class Ventana {
         boton.setFont(new Font("Comic Sans MS", Font.PLAIN, 16));
         boton.setBounds(new Rectangle(posX, posY, ancho, alto));
         boton.addActionListener((ActionEvent e) -> {
-            /**Ejecucion del algoritmo*/
-            crearVentana();
+            /**Ejecucion del algoritmo*/ 
+            Ejecutar.ejecutarAlgoritmo(alfabeto.getText(), expresionRegular.getText(), cadena.getText());
         });
         return boton;
     }
