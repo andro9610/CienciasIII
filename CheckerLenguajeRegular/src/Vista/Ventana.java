@@ -1,5 +1,6 @@
 package Vista;
         
+import Controlador.Comparador;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Image;
@@ -74,7 +75,7 @@ public class Ventana {
         boton.setBounds(new Rectangle(posX, posY, ancho, alto));
         boton.addActionListener((ActionEvent e) -> {
             /**Ejecucion del algoritmo*/ 
-            Ejecutar.ejecutarAlgoritmo(alfabeto.getText(), expresionRegular.getText(), cadena.getText());
+            Comparador.ejecutarAlgoritmo(alfabeto.getText(), expresionRegular.getText(), cadena.getText());
         });
         return boton;
     }
