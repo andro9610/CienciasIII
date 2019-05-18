@@ -1,4 +1,4 @@
-package Controlador;
+package Principal;
         
 import Vista.Ventana;
 import Vista.VentanaEmergente;

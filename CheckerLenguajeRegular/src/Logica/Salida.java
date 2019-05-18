@@ -1,24 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package Controlador;
+package Logica;
 
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author jorge diaz
- */
 public class Salida {
     private static Salida salida;
     private String string;
 	
 	private Salida(String string) {
 		this.string = string;
-		JOptionPane.showMessageDialog(null,this.string);
-                
+		JOptionPane.showMessageDialog(null,this.string);           
 	}
 	
 	public static Salida mostrar(String string) {

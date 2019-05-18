@@ -1,6 +1,6 @@
 package Vista;
         
-import Controlador.Comparador;
+import Logica.Comparador;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Image;
@@ -15,7 +15,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 
-import Controlador.Ejecutar;
+import Principal.Ejecutar;
 
 public class Ventana {
     /**crearVentana: Crea una ventana*/
