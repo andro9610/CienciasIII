@@ -18,9 +18,10 @@ public class Comparador {
         /**Codigo que llama a la funcionalidad logica del programa aqui*/
         
        // mostrarMensaje("error","Aun no existe la logica de la aplicacion");
+       
        String F = cadena;
        String L = alfabeto;
-       boolean band = false;
+       boolean band = true;
         int cont = 0;
        int i=1;
        while(i<=F.length() && band==true){
@@ -41,12 +42,12 @@ public class Comparador {
         cont+=1;   
        }
        if(band==false){
-           System.out.println("No pertenece al lenguaje");
+            System.out.println("No pertenece al lenguaje");
        }else{
            System.out.println("Pertenece al lenguaje");
        }
     }
-    }
+    
     
     /**Metodos que permiten pasar informacion de la capa logica a la capa vista
      * mostrarMensaje: envia una ventana emergente que le avisa al usuario sobre
@@ -64,3 +65,4 @@ public class Comparador {
         }
     }
 }
+

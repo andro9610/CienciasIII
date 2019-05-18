@@ -11,7 +11,7 @@ package Controlador;
  */
 public class Salida {
     private static Salida salida;
-	private String string;
+    private String string;
 	
 	private Salida(String string) {
 		this.string = string;
@@ -34,6 +34,10 @@ public class Salida {
 	public static void setSalida(Salida salida) {
 		Salida.salida = salida;
 	}
+
+    Salida() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
 	public String getString() {
 		return string;
