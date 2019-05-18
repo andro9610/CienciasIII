@@ -42,9 +42,11 @@ public class Comparador {
         cont+=1;   
        }
        if(band==false){
-            System.out.println("No pertenece al lenguaje");
+            Salida s1;
+            s1 = Salida.mostrar("No hace parte del lenguaje");
        }else{
-           System.out.println("Pertenece al lenguaje");
+            Salida s1;
+            s1 = Salida.mostrar("Hace parte del lenguaje");
            exist=true;
        }
        
@@ -54,7 +56,16 @@ public class Comparador {
                Matcher m = patron.matcher(F);
                
                boolean coincidencia = m.matches();
-               System.out.println("Hay coincidencia? "+ coincidencia);
+               
+               Salida s1;
+		if(coincidencia==true){
+                    s1 = Salida.mostrar("La frase hace parte de la expresion regular");
+                    s1.setString("");
+                }else{
+                    s1 = Salida.mostrar("La frase no hace parte de la expresion regular");
+                    s1.setString("");
+                }
+               
            
        }
        
@@ -67,14 +78,6 @@ public class Comparador {
      * 
      * @param : String tipoMensaje, String mensaje
     */
-    public static void mostrarMensaje(String tipoMensaje, String mensaje){
-        VentanaEmergente aviso = new VentanaEmergente();
-        switch(tipoMensaje){
-            case "informacion":
-                aviso.mostrarInformacion(mensaje);
-            case "error":
-                aviso.mostrarAlerta(mensaje);
-        }
-    }
+    
 }
 

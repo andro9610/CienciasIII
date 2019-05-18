@@ -5,6 +5,8 @@
  */
 package Controlador;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author jorge diaz
@@ -15,12 +17,14 @@ public class Salida {
 	
 	private Salida(String string) {
 		this.string = string;
-		System.out.println(this.string);
+		JOptionPane.showMessageDialog(null,this.string);
+                
 	}
 	
 	public static Salida mostrar(String string) {
 		if (salida == null) {
 			salida = new Salida(string);
+                        salida = null;
 		}else {
 			System.out.println("El objeto ya esta creado");
 		}
