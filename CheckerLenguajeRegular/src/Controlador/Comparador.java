@@ -6,7 +6,8 @@
 package Controlador;
 
 import Vista.VentanaEmergente;
-
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 /**
  *
  * @author jorge diaz
@@ -15,6 +16,7 @@ public class Comparador {
     /**Metodos que permiten pasar datos de la Capa Vista a la capa logica*/
     public static void ejecutarAlgoritmo(String alfabeto, String expresionRegular, String cadena){
         /**Codigo que llama a la funcionalidad logica del programa aqui*/
+        
         mostrarMensaje("error","Aun no existe la logica de la aplicacion");
     }
     
