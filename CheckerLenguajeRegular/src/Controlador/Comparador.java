@@ -18,10 +18,10 @@ public class Comparador {
         /**Codigo que llama a la funcionalidad logica del programa aqui*/
         
        // mostrarMensaje("error","Aun no existe la logica de la aplicacion");
-       
+       String regex = expresionRegular;
        String F = cadena;
        String L = alfabeto;
-       boolean band = true;
+       boolean band = true, exist=false;
         int cont = 0;
        int i=1;
        while(i<=F.length() && band==true){
@@ -45,7 +45,19 @@ public class Comparador {
             System.out.println("No pertenece al lenguaje");
        }else{
            System.out.println("Pertenece al lenguaje");
+           exist=true;
        }
+       
+       if(exist == true){
+           
+               Pattern patron = Pattern.compile(regex);
+               Matcher m = patron.matcher(F);
+               
+               boolean coincidencia = m.matches();
+               System.out.println("Hay coincidencia? "+ coincidencia);
+           
+       }
+       
     }
     
     
