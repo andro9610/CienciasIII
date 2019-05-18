@@ -75,7 +75,8 @@ public class Ventana {
         boton.setBounds(new Rectangle(posX, posY, ancho, alto));
         boton.addActionListener((ActionEvent e) -> {
             /**Ejecucion del algoritmo*/ 
-            Comparador.ejecutarAlgoritmo(alfabeto.getText(), expresionRegular.getText(), cadena.getText());
+            Comparador.ejecutarAlgoritmo(alfabeto.getText(), 
+                    expresionRegular.getText(), cadena.getText());
         });
         return boton;
     }

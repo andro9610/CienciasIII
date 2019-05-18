@@ -18,7 +18,7 @@ import javax.swing.JTextField;
  * regular en cuestion.
  */
 public class Ejecutar {
-    /**Grito de guerra: Pone el programa a funciona
+    /**Grito de guerra: Pone el programa a funcionar
      * @param argsr*/
     public static void main(String[] args) {
         Ventana ventanaPrincipal = new Ventana();
