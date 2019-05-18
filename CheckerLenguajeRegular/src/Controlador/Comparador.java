@@ -49,7 +49,7 @@ public class Comparador {
             s1 = Salida.mostrar("Hace parte del lenguaje");
            exist=true;
        }
-       
+       /**Hace comprobacion de coincidencia entre expresion logica y la frase ingresada*/
        if(exist == true){
            
                Pattern patron = Pattern.compile(regex);
@@ -59,11 +59,9 @@ public class Comparador {
                
                Salida s1;
 		if(coincidencia==true){
-                    s1 = Salida.mostrar("La frase hace parte de la expresion regular");
-                    s1.setString("");
+                    s1 = Salida.mostrar("La frase hace parte de la expresion regular");    
                 }else{
                     s1 = Salida.mostrar("La frase no hace parte de la expresion regular");
-                    s1.setString("");
                 }
                
            
