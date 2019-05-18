@@ -8,6 +8,7 @@ import java.util.regex.Pattern;
 public class Comparador {
     /**Metodos que permiten pasar datos de la Capa Vista a la capa logica*/
 
+
     public static void ejecutarAlgoritmo(String alfabetoIngresado, 
             String expresionRegularIngresada, String cadenaIngresada){
         
@@ -15,6 +16,7 @@ public class Comparador {
        String cadena = cadenaIngresada;
        String alfabeto = alfabetoIngresado;
        boolean band = true, exist=false;
+
 
         int cont = 0;
         int i=1;
@@ -42,22 +44,21 @@ public class Comparador {
             Salida s1;
             s1 = Salida.mostrar("Hace parte del lenguaje");
             exist=true;
-       }
-       /**Hace comprobacion de coincidencia entre expresion logica y la 
-        * frase ingresada*/
-       if(exist == true){
-        Pattern patron = Pattern.compile(expresionRegular);
-        Matcher m = patron.matcher(cadena);
-        boolean coincidencia = m.matches();
-        Salida s1;
-         if(coincidencia==true){
-             s1 = Salida.mostrar("La frase hace parte de la expresion regular");    
-         }else{
-             s1 = Salida.mostrar
-            ("La frase no hace parte de la expresion regular");
-         } 
-            exist=true;
-        }        
+
+        }
+        /**Hace comprobacion de coincidencia entre expresion logica y la frase ingresada*/
+        if(exist == true){
+            Pattern patron = Pattern.compile(expresionRegular);
+            Matcher m = patron.matcher(cadena);
+            boolean coincidencia = m.matches();
+            Salida s1;
+            if(coincidencia==true){
+                s1 = Salida.mostrar("La frase hace parte de la expresion regular");    
+            }else{
+                s1 = Salida.mostrar("La frase no hace parte de la expresion regular");
+            } 
+       }     
+
     }
 }
 
