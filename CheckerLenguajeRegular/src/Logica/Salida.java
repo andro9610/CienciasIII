@@ -17,7 +17,7 @@ public class Salida {
         
     /** * Mostrar: Metodo cuya funcionalidad es mostrar todas las salidas de 
     * mensajes en el programa.parametros: String string
-     * @param string
+     * @param 
      * @return Salida salida;
      */
 	public static Salida mostrar(String string) {
