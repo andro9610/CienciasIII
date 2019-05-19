@@ -15,9 +15,9 @@ public class Salida {
 		JOptionPane.showMessageDialog(null,this.string);           
 	}
         
-    /**Mostrar: Metodo cuya funcionalidad es mostrar todas las salidas de 
-    * mensajes en el programa.
-     * parametros: String string
+    /** * Mostrar: Metodo cuya funcionalidad es mostrar todas las salidas de 
+    * mensajes en el programa.parametros: String string
+     * @param 
      * @return Salida salida;
      */
 	public static Salida mostrar(String string) {
@@ -37,10 +37,9 @@ public class Salida {
 	public static Salida getSalida() {
 		return salida;
 	}
-    /**setSalida: Metodo cuya funcionalidad es modificar el estado dl obejto
-         * Salida.
-     * parametros: String string
-     * @return void;
+    /** * setSalida: Metodo cuya funcionalidad es modificar el estado dl obejto
+         * Salida.parametros: String string
+     * @param salida
      */
 	public static void setSalida(Salida salida) {
 		Salida.salida = salida;

@@ -1,8 +1,6 @@
 package Principal;
         
 import Vista.Ventana;
-import Vista.VentanaEmergente;
-import javax.swing.JTextField;
 /**
  * CheckerLenguajeRegular
  * 
@@ -19,7 +17,7 @@ import javax.swing.JTextField;
  */
 public class Ejecutar {
     /**Grito de guerra: Pone el programa a funcionar
-     * @param argsr*/
+     * @param args*/
     public static void main(String[] args) {
         Ventana ventanaPrincipal = new Ventana();
         ventanaPrincipal.crearVentana();
