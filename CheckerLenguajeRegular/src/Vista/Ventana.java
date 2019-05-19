@@ -34,7 +34,7 @@ public class Ventana {
         Image Image = ImageIcon.getImage();
         ventana.setIconImage(Image);
         /**Añadido de paneles a la ventana*/
-        ventana.add(añadirElementos());
+        ventana.add(agregarElementos());
         /**Mostrar la ventana*/
         ventana.setVisible(true);
     }
@@ -43,7 +43,7 @@ public class Ventana {
     public static JTextField alfabeto,expresionRegular,cadena;
     /**añadirElementos: Añade JButtons JLabels y textFields a La ventan
      * @return panel*/
-    private JPanel añadirElementos(){
+    private JPanel agregarElementos(){
         JPanel panel = new JPanel();
         panel.setLayout(null);
         /**añadido de elementos al Panel*/

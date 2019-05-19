@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="CheckerLenguajeRegular">
+  <ClassDiagramComponents>
+    <Class name="Comparador" package="Logica" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="ejecutarAlgoritmo" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="alfabetoIngresado"/>
+          <Argument type="String" name="expresionRegularIngresada"/>
+          <Argument type="String" name="cadenaIngresada"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Salida" package="Logica" visibility="public" xPosition="320.0" yPosition="20.0">
+      <Fields>
+        <Field name="salida" type="Salida" visibility="private" isStatic="true"/>
+        <Field name="string" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="private">
+          <Argument type="String" name="string"/>
+        </Constructor>
+        <Constructor visibility="package"/>
+      </Constructors>
+      <Methods>
+        <Method name="mostrar" returnType="Salida" visibility="public" isStatic="true">
+          <Argument type="String" name="string"/>
+        </Method>
+        <Method name="getSalida" returnType="Salida" visibility="public" isStatic="true"/>
+        <Method name="setSalida" returnType="void" visibility="public" isStatic="true">
+          <Argument type="Salida" name="salida"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Ejecutar" package="Principal" visibility="public" xPosition="620.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Ventana" package="Vista" visibility="public" xPosition="920.0" yPosition="20.0">
+      <Fields>
+        <Field name="alfabeto" type="JTextField" visibility="public" isStatic="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="crearVentana" returnType="void" visibility="public"/>
+        <Method name="agregarElementos" returnType="JPanel" visibility="private"/>
+        <Method name="crearBoton" returnType="JButton" visibility="private">
+          <Argument type="String" name="textoBoton"/>
+          <Argument type="int" name="posX"/>
+          <Argument type="int" name="posY"/>
+          <Argument type="int" name="ancho"/>
+          <Argument type="int" name="alto"/>
+        </Method>
+        <Method name="crearTexto" returnType="JLabel" visibility="private">
+          <Argument type="String" name="mensaje"/>
+          <Argument type="int" name="posX"/>
+          <Argument type="int" name="posY"/>
+          <Argument type="int" name="ancho"/>
+          <Argument type="int" name="alto"/>
+        </Method>
+        <Method name="crearInput" returnType="JTextField" visibility="private">
+          <Argument type="int" name="posX"/>
+          <Argument type="int" name="posY"/>
+          <Argument type="int" name="ancho"/>
+          <Argument type="int" name="alto"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="VentanaEmergente" package="Vista" visibility="public" xPosition="1220.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="mostrarInformacion" returnType="void" visibility="public">
+          <Argument type="String" name="mensaje"/>
+        </Method>
+        <Method name="mostrarAlerta" returnType="void" visibility="public">
+          <Argument type="String" name="mensaje"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="Logica.Salida" target="Logica.Salida" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="salida" source="Logica.Salida" target="Logica.Salida" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
