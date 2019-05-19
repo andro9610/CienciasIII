@@ -1,6 +1,5 @@
 package Logica;
 
-import Logica.Salida;
 import Vista.VentanaEmergente;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -8,12 +7,12 @@ import java.util.regex.Pattern;
 public class Comparador {
     /**Metodos que permiten pasar datos de la Capa Vista a la capa logica*/
 
-/**ejecutarAlgoritmo: Metodo dedicado a la comprobacion de cadenas de texto.
-     * parametros: String alfabetoIngresado, String expresionRegularIngresada,
-     * String cadenaIngresada,boolean Band, boolean exist,int cont, int i, int q,
-     * int cont1, Pattern patron, Matcher m, Salida s1.
-     * @return void;
-     */
+/** * ejecutarAlgoritmo: Metodo dedicado a la comprobacion de cadenas de texto.parametros: String alfabetoIngresado, String expresionRegularIngresada,
+ String cadenaIngresada,boolean Band, boolean exist,int cont, int i, int q,
+ int cont1, Pattern patron, Matcher m, Salida s
+     * @param alfabetoIngresado
+     * @param expresionRegularIngresada
+     * @param cadenaIngresada*/
     public static void ejecutarAlgoritmo(String alfabetoIngresado, 
             String expresionRegularIngresada, String cadenaIngresada){
        boolean band = true, exist=false;
@@ -26,11 +25,7 @@ public class Comparador {
             int cont1=0;
             band=false;
             while(q<=alfabetoIngresado.length() && band==false){   
-                if(letter.equals(alfabetoIngresado.substring(cont1, q))){
-                    band=true;
-                }else{
-                    band=false;
-                }
+                band = letter.equals(alfabetoIngresado.substring(cont1, q));
                 cont1+=2;
                q+=2;
             }
