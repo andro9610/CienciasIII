@@ -69,11 +69,16 @@ public class VentanaGrafos{
    /**crearBotonAgregarTransicion: crea el boton de agregar transicion, y le da funcionalidad
     * @return botonTransicion (JButton)
     */
-   private JButton crearBotonAgregarTransicion(){
+   private  JButton crearBotonAgregarTransicion(){
         JButton botonTransicion = herramientas.crearBoton("Agregar transicion", 491, 95, 260, 54, new Color(172, 0, 184));
         /** Añadido de ActionListener */
         botonTransicion.addActionListener((ActionEvent e) -> {
             /** Ejecucion del algoritmo */
+            int ei = Integer.parseInt(javax.swing.JOptionPane.showInputDialog("Ingrese estado inicial"));
+            String transi = javax.swing.JOptionPane.showInputDialog("Ingrese transición");
+            int ef = Integer.parseInt(javax.swing.JOptionPane.showInputDialog("Ingrese estado final"));
+            z.addTransicion(ei, transi, ef);
+            tabla1();
             System.out.println("Accion de transicion");
         });
         return botonTransicion;
