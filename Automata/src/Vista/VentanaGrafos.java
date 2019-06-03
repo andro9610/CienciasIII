@@ -83,5 +83,4 @@ public class VentanaGrafos{
        panelGrafico.setBackground(herramientas.obtenerColor("grisClaro"));
        return panelGrafico;
    }
-
 }
