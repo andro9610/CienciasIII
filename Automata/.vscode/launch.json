@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "ProgramaAutomata(Ejecutar)",
+            "request": "launch",
+            "mainClass": "Principal.Ejecutar",
+            "projectName": "Automata_9f6bc8df"
+        }
+    ]
+}
