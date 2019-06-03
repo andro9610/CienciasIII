@@ -1,0 +1,1 @@
+typeSearchIndex = [{"p":"Logica","l":"Comparador"},{"p":"Principal","l":"Ejecutar"},{"p":"Logica","l":"Salida"},{"p":"Vista","l":"Ventana"},{"p":"Vista","l":"VentanaEmergente"}]

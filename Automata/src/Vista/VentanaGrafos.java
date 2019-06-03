@@ -1,5 +1,6 @@
 package Vista;
 
+import Logica.Automata;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 
@@ -85,4 +86,25 @@ public class VentanaGrafos{
        return panelGrafico;
    }
    
+   public void tabla1() {
+        tabla1 = "\t" + z.getAlfabeto().toString() + "\n";
+
+        for (int i = 0; i < z.getTablaTransiciones().length; i++) {
+            for (int j = 0; j < z.getTablaTransiciones()[i].length; j++) {
+                if (j == 0) {
+                    tabla1 = tabla1 + i + "\t" + (z.getTablaTransiciones()[i][j].toString());
+                } else {
+
+                    tabla1 = tabla1 + (z.getTablaTransiciones()[i][j].toString());
+                }
+            }
+            tabla1 = tabla1 + "\n";
+        }
+        //this.jTextArea1.setText(tabla1);
+    }
+   
+   public static Automata z = new Automata();
+   String tabla1 = "";
+   public Automata trans = new Automata();
+   String tabla2 = "";
 }
