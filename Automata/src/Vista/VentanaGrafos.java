@@ -47,8 +47,9 @@ public class VentanaGrafos{
         formulario.add(inputEstadosFinales);
         formulario.add(inputAlfabeto);
         /*** Añadido de los botones */
-        formulario.add(crearBotonTransformar());
         formulario.add(crearBotonAgregarTransicion());
+        formulario.add(crearBotonTransformar());
+        
         return formulario;
     }
 
@@ -56,7 +57,7 @@ public class VentanaGrafos{
      * @return botonTransformar (JButton)
      */
     private JButton crearBotonTransformar() {
-        JButton botonTransformar = herramientas.crearBoton("Transformar", 491, 24, 260, 54, new Color(0, 170, 72));
+        JButton botonTransformar = herramientas.crearBoton("Transformar", 491, 95, 260, 54, new Color(0, 170, 72));
         /** Añadido de ActionListener */
         botonTransformar.addActionListener((ActionEvent e) -> {
             /** Ejecucion del algoritmo */
@@ -69,7 +70,7 @@ public class VentanaGrafos{
     * @return botonTransicion (JButton)
     */
    private JButton crearBotonAgregarTransicion(){
-        JButton botonTransicion = herramientas.crearBoton("Agregar transicion", 491, 95, 260, 54, new Color(172, 0, 184));
+        JButton botonTransicion = herramientas.crearBoton("Agregar transicion", 491, 24, 260, 54, new Color(172, 0, 184));
         /** Añadido de ActionListener */
         botonTransicion.addActionListener((ActionEvent e) -> {
             /** Ejecucion del algoritmo */
