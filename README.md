@@ -1,5 +1,4 @@
 # CienciasIII
-Documentacion /checkerLenguajeRegular/Dist/Javadoc
 
 Repositorio con todo el material de Ciencias de la Computacion III 
 
