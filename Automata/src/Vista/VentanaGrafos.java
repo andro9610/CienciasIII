@@ -78,9 +78,11 @@ public class VentanaGrafos{
         return botonTransicion;
    }
 
+   /**crearPanelGrafico: crea un panel para la insercion del grafo */
    private JPanel crearPanelGrafico(){
        JPanel panelGrafico = herramientas.agregarPanel(800, 412);
        panelGrafico.setBackground(herramientas.obtenerColor("grisClaro"));
        return panelGrafico;
    }
+   
 }
