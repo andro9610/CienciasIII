@@ -1,6 +1,7 @@
 package Vista;
 
 import Logica.Automata;
+import Logica.Transformador;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 
@@ -11,6 +12,7 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 import Vista.RecursosGraficos;
+import java.util.TreeSet;
 
 /**VentanaGrafos: clase con la implementacion puntual de la ventana principal de
  * la aplicacion*/
@@ -89,6 +91,11 @@ public class VentanaGrafos{
         /** Añadido de ActionListener */
         botonTransformar.addActionListener((ActionEvent e) -> {
             /** Ejecucion del algoritmo */
+            trans = new Transformador().minimizar(z);
+            tabla2();
+            //this.txtNumEstados1.setText(String.valueOf(trans.getnumEstados()));
+            //this.txtAlfabeto1.setText(trans.getAlfabeto().toString());
+            //this.txtestFinales1.setText(trans.getestadoFinal().toString());
             System.out.println(inputEstados.getText());
         });
        return botonTransformar;
@@ -102,6 +109,11 @@ public class VentanaGrafos{
         /** Añadido de ActionListener */
         botonTransicion.addActionListener((ActionEvent e) -> {
             /** Ejecucion del algoritmo */
+            int ei = Integer.parseInt(javax.swing.JOptionPane.showInputDialog("Ingrese estado inicial"));
+            String transi = javax.swing.JOptionPane.showInputDialog("Ingrese transición");
+            int ef = Integer.parseInt(javax.swing.JOptionPane.showInputDialog("Ingrese estado final"));
+            z.addTransicion(ei, transi, ef);
+            tabla1();
             System.out.println("Accion de transicion");
         });
         return botonTransicion;
@@ -124,6 +136,51 @@ public class VentanaGrafos{
         JTextArea tablaTransiciones = herramientas.crearAreaTexto(posX, posY, alto, ancho, colorTablaTransiciones);
         return tablaTransiciones;
    }
+   
+   public void tabla1() {
+        tabla1 = "\t" + z.getAlfabeto().toString() + "\n";
+
+        for (int i = 0; i < z.getTablaTransiciones().length; i++) {
+            for (int j = 0; j < z.getTablaTransiciones()[i].length; j++) {
+                if (j == 0) {
+                    tabla1 = tabla1 + i + "\t" + (z.getTablaTransiciones()[i][j].toString());
+                } else {
+
+                    tabla1 = tabla1 + (z.getTablaTransiciones()[i][j].toString());
+                }
+            }
+            tabla1 = tabla1 + "\n";
+        }
+        this.areaA.setText(tabla1);
+    }
+   
+   public void tabla2() {
+        tabla2 = "\t" + trans.getAlfabeto().toString() + "\n";
+        TreeSet<Integer> table = new TreeSet<Integer>();
+        table.add(0);
+
+        for (int i = 0; i < trans.getTablaTransiciones().length; i++) {
+            for (int j = 0; j < trans.getTablaTransiciones()[i].length; j++) {
+                if (trans.getTablaTransiciones()[i][j].isEmpty()) {
+                    trans.getTablaTransiciones()[i][j] = table;
+                }
+            }
+        }
+
+
+        for (int i = 0; i < trans.getTablaTransiciones().length; i++) {
+            for (int j = 0; j < trans.getTablaTransiciones()[i].length; j++) {
+                if (j == 0) {
+                    tabla2 = tabla2 + i + "\t" + (trans.getTablaTransiciones()[i][j].toString());
+                } else {
+
+                    tabla2 = tabla2 + (trans.getTablaTransiciones()[i][j].toString());
+                }
+            }
+            tabla2 = tabla2 + "\n";
+        }
+        this.areaB.setText(tabla2);
+    }
    
     public static Automata z = new Automata();
     String tabla1 = "";
