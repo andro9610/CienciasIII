@@ -1,5 +1,6 @@
 package Vista;
 
+import Logica.Automata;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 
@@ -27,6 +28,7 @@ public class VentanaGrafos{
 
     /**VentanaGrafos: Agrega todos los elementos a la ventana para su funcionamiento*/
     public void crearVentanaGrafos() {
+        
         herramientas = new RecursosGraficos();
         JFrame ventanaGrafos = herramientas.crearVentana("Automatas", "../Recursos/Icono.png", 800, 600);
         ventanaGrafos.setBackground(new Color(35, 35, 35));
@@ -37,6 +39,24 @@ public class VentanaGrafos{
 
     /**crearFormulario: retorna un panel con los elementos de la parte superior de la pantalla*/
     private JPanel crearFormulario() {
+        z.setNombre("Autómata");
+
+        Integer numEstados = Integer.parseInt(javax.swing.JOptionPane.showInputDialog("Ingrese número de estados"));
+        z.setnumEstados(numEstados);
+        z.setEstadoInicial(0);
+
+
+        int estFinales = Integer.parseInt(javax.swing.JOptionPane.showInputDialog("Ingrese número de estados finales"));
+        for (int i = 0; i < estFinales; i++) {
+            int estadoFinal = Integer.parseInt(javax.swing.JOptionPane.showInputDialog("Ingrese estado final"));
+            z.addEstadoFinal(estadoFinal);
+        }
+
+        int alf = Integer.parseInt(javax.swing.JOptionPane.showInputDialog("Ingrese cantidad de letras del alfabeto"));
+        for (int i = 0; i < alf; i++) {
+            z.addLetraAlfabeto(javax.swing.JOptionPane.showInputDialog("Ingrese letra"));
+        }
+        
         JPanel formulario = herramientas.agregarPanel(800, 177);
         formulario.setBackground(new Color(35, 35, 35));
         /** Añadido de textos */
@@ -44,15 +64,20 @@ public class VentanaGrafos{
         formulario.add(herramientas.crearTexto("Estados finales:", 15, 71, 169, 32, herramientas.obtenerColor("grisClaro")));
         formulario.add(herramientas.crearTexto("Alfabeto:", 15, 113, 99, 50, herramientas.obtenerColor("grisClaro")));
         /** Añadido de campos de texto */
-        inputEstados = herramientas.crearInput(197, 19, 249, 32);
-        inputEstadosFinales = herramientas.crearInput(197, 71, 249, 32);
-        inputAlfabeto = herramientas.crearInput(197, 123, 249, 32);
-        formulario.add(inputEstados);
-        formulario.add(inputEstadosFinales);
-        formulario.add(inputAlfabeto);
+        formulario.add(herramientas.crearTexto(z.getestadoFinal().toString(), 197, 71, 249, 32, herramientas.obtenerColor("grisClaro")));
+        formulario.add(herramientas.crearTexto(numEstados.toString(), 197, 19, 249, 32, herramientas.obtenerColor("grisClaro")));
+        formulario.add(herramientas.crearTexto(z.getAlfabeto().toString(), 197, 113, 249, 32, herramientas.obtenerColor("grisClaro")));
+
+        //inputEstados = herramientas.crearInput(197, 19, 249, 32);
+        //inputEstadosFinales = herramientas.crearInput(197, 71, 249, 32);
+        //inputAlfabeto = herramientas.crearInput(197, 113, 249, 32);
+        //formulario.add(inputEstados);
+        //formulario.add(inputEstadosFinales);
+        //formulario.add(inputAlfabeto);
         /*** Añadido de los botones */
-        formulario.add(crearBotonTransformar());
         formulario.add(crearBotonAgregarTransicion());
+        formulario.add(crearBotonTransformar());
+        
         return formulario;
     }
 
@@ -60,7 +85,7 @@ public class VentanaGrafos{
      * @return botonTransformar (JButton)
      */
     private JButton crearBotonTransformar() {
-        JButton botonTransformar = herramientas.crearBoton("Transformar", 491, 24, 260, 54, new Color(0, 170, 72));
+        JButton botonTransformar = herramientas.crearBoton("Transformar", 491, 95, 260, 54, new Color(0, 170, 72));
         /** Añadido de ActionListener */
         botonTransformar.addActionListener((ActionEvent e) -> {
             /** Ejecucion del algoritmo */
@@ -73,7 +98,7 @@ public class VentanaGrafos{
     * @return botonTransicion (JButton)
     */
    private JButton crearBotonAgregarTransicion(){
-        JButton botonTransicion = herramientas.crearBoton("Agregar transicion", 491, 95, 260, 54, new Color(172, 0, 184));
+        JButton botonTransicion = herramientas.crearBoton("Agregar transicion", 491, 24, 260, 54, new Color(172, 0, 184));
         /** Añadido de ActionListener */
         botonTransicion.addActionListener((ActionEvent e) -> {
             /** Ejecucion del algoritmo */
@@ -100,4 +125,8 @@ public class VentanaGrafos{
         return tablaTransiciones;
    }
    
+    public static Automata z = new Automata();
+    String tabla1 = "";
+    public Automata trans = new Automata();
+    String tabla2 = "";
 }
