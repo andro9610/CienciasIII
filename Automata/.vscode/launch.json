@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Ejecutar",
+            "request": "launch",
+            "mainClass": "Principal.Ejecutar",
+            "projectName": "Automata_17b6e6f2"
+        },
+        {
+            "type": "java",
             "name": "ProgramaAutomata(Ejecutar)",
             "request": "launch",
             "mainClass": "Principal.Ejecutar",

@@ -6,6 +6,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 import Vista.RecursosGraficos;
@@ -20,6 +21,9 @@ public class VentanaGrafos{
     JTextField inputEstados;
     JTextField inputEstadosFinales;
     JTextField inputAlfabeto;
+    
+    JTextArea areaA;
+    JTextArea areaB;
 
     /**VentanaGrafos: Agrega todos los elementos a la ventana para su funcionamiento*/
     public void crearVentanaGrafos() {
@@ -82,7 +86,18 @@ public class VentanaGrafos{
    private JPanel crearPanelGrafico(){
        JPanel panelGrafico = herramientas.agregarPanel(800, 412);
        panelGrafico.setBackground(herramientas.obtenerColor("grisClaro"));
+       /**Añadido de los TextArea */
+       areaA = crearTablaTransiciones(5, 210, 370, 330);
+       areaB = crearTablaTransiciones(400, 210, 370, 330);
+       panelGrafico.add(areaA);
+       panelGrafico.add(areaB);
        return panelGrafico;
+   }
+
+   private JTextArea crearTablaTransiciones(int posX, int posY, int alto, int ancho){
+       Color colorTablaTransiciones = herramientas.obtenerColor("verdeClaro");
+        JTextArea tablaTransiciones = herramientas.crearAreaTexto(posX, posY, alto, ancho, colorTablaTransiciones);
+        return tablaTransiciones;
    }
    
 }
