@@ -68,12 +68,12 @@ public class VentanaGrafos{
         formulario.add(herramientas.crearTexto(numEstados.toString(), 197, 19, 249, 32, herramientas.obtenerColor("grisClaro")));
         formulario.add(herramientas.crearTexto(z.getAlfabeto().toString(), 197, 113, 249, 32, herramientas.obtenerColor("grisClaro")));
 
-        //inputEstados = herramientas.crearInput(197, 19, 249, 32);
-        //inputEstadosFinales = herramientas.crearInput(197, 71, 249, 32);
-        //inputAlfabeto = herramientas.crearInput(197, 113, 249, 32);
-        //formulario.add(inputEstados);
-        //formulario.add(inputEstadosFinales);
-        //formulario.add(inputAlfabeto);
+        inputEstados = herramientas.crearInput(197, 19, 249, 32);
+        inputEstadosFinales = herramientas.crearInput(197, 71, 249, 32);
+        inputAlfabeto = herramientas.crearInput(197, 113, 249, 32);
+        formulario.add(inputEstados);
+        formulario.add(inputEstadosFinales);
+        formulario.add(inputAlfabeto);
         /*** Añadido de los botones */
         formulario.add(crearBotonAgregarTransicion());
         formulario.add(crearBotonTransformar());
