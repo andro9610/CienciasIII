@@ -1,6 +1,7 @@
 package Vista;
 
 import Logica.Automata;
+import Logica.Transformador;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 
@@ -90,6 +91,11 @@ public class VentanaGrafos{
         /** Añadido de ActionListener */
         botonTransformar.addActionListener((ActionEvent e) -> {
             /** Ejecucion del algoritmo */
+            trans = new Transformador().minimizar(z);
+            tabla2();
+            //this.txtNumEstados1.setText(String.valueOf(trans.getnumEstados()));
+            //this.txtAlfabeto1.setText(trans.getAlfabeto().toString());
+            //this.txtestFinales1.setText(trans.getestadoFinal().toString());
             System.out.println(inputEstados.getText());
         });
        return botonTransformar;
@@ -103,6 +109,11 @@ public class VentanaGrafos{
         /** Añadido de ActionListener */
         botonTransicion.addActionListener((ActionEvent e) -> {
             /** Ejecucion del algoritmo */
+            int ei = Integer.parseInt(javax.swing.JOptionPane.showInputDialog("Ingrese estado inicial"));
+            String transi = javax.swing.JOptionPane.showInputDialog("Ingrese transición");
+            int ef = Integer.parseInt(javax.swing.JOptionPane.showInputDialog("Ingrese estado final"));
+            z.addTransicion(ei, transi, ef);
+            tabla1();
             System.out.println("Accion de transicion");
         });
         return botonTransicion;
@@ -155,7 +166,6 @@ public class VentanaGrafos{
                 }
             }
         }
-
 
 
         for (int i = 0; i < trans.getTablaTransiciones().length; i++) {
