@@ -41,7 +41,6 @@ public class Transformador {
         }
 
         return new Automata(nombre, numestados, alfabeto, estadoInicial, estadoFinal, tabtrans);
-
     }
 
     private void quitarIndeterminismo() {
