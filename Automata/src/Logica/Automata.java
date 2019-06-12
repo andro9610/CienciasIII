@@ -17,18 +17,16 @@ public class Automata {
         super();
         Alfabeto = new TreeSet<String>();
         estadoFinal = new TreeSet<Integer>();
-
-
     }
 
     public Automata(String nombre, int nEstados, TreeSet<String> alfabeto, int q0,
-            TreeSet<Integer> qend, TreeSet<Integer>[][] tablaTransiciones) {
+            TreeSet<Integer> qFinal, TreeSet<Integer>[][] tablaTransiciones) {
         super();
         Nombre = nombre;
         this.numEstados = nEstados;
         Alfabeto = alfabeto;
         this.EstadoInicial = q0;
-        estadoFinal = qend;
+        estadoFinal = qFinal;
         TablaTransiciones = tablaTransiciones;
     }
 
