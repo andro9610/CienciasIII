@@ -27,9 +27,7 @@ public class Transformador {
         if (alfabeto.contains("E")) {
             quitarTansicionesVacias();
         } else {
-            JOptionPane.showMessageDialog(null, "no tiene tranciciones vacias");
-
-
+           
         }
         if (noEsDeterminista()) {
             quitarIndeterminismo();   
@@ -41,10 +39,8 @@ public class Transformador {
         while (!verificarMinimo()) {
             minimizar();
         }
-        JOptionPane.showMessageDialog(null, "Es minimo");
 
         return new Automata(nombre, numestados, alfabeto, estadoInicial, estadoFinal, tabtrans);
-
     }
 
     private void quitarIndeterminismo() {
