@@ -17,7 +17,7 @@ import java.util.TreeSet;
 import javax.swing.JLabel;
 
 /**VentanaGrafos: clase con la implementacion puntual de la ventana principal de
- * la aplicacion*/
+ * la aplicacion */
 public class VentanaGrafos{
     /** Variable para crear toda la interfaz con mas facilidad */
     RecursosGraficos herramientas;
