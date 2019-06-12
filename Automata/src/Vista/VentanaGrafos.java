@@ -123,6 +123,9 @@ public class VentanaGrafos{
        /**Añadido de los TextArea */
        areaNoDeterminista = crearTablaTransiciones(5, 210, 370, 330);
        areaDeterminista = crearTablaTransiciones(400, 210, 370, 330);
+       /**Añadido de los titulos para los TextArea*/
+       panelGrafico.add(herramientas.crearTexto("Automata no determinista", 5, 100, 200, 200, Color.black));
+       panelGrafico.add(herramientas.crearTexto("Automata determinista", 405, 100, 200, 200, Color.black));
        panelGrafico.add(areaNoDeterminista);
        panelGrafico.add(areaDeterminista);
        return panelGrafico;
@@ -183,13 +186,4 @@ public class VentanaGrafos{
     String tabla1 = "";
     public Automata trans = new Automata();
     String tabla2 = "";
-    
-    private String imprimirTreeSet(TreeSet elVector){
-        String textoTreeSet = null;
-        for( Iterator it = elVector.iterator(); it.hasNext();) {      
-            textoTreeSet = textoTreeSet+", "+elVector.iterator();
-            System.out.println(textoTreeSet);
-        }
-        return textoTreeSet;
-    }
 }
